@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/varun/NetBeansProjects/LanChatAndFileSearching2/src/privateChat/P2PServer.java</file>
             <file>file:/home/varun/NetBeansProjects/LanChatAndFileSearching2/src/lanchatandfilesearching2/MainWindow.java</file>
+            <file>file:/home/varun/NetBeansProjects/LanChatAndFileSearching2/src/groupChat/GroupServer.java</file>
+            <file>file:/home/varun/NetBeansProjects/LanChatAndFileSearching2/src/groupChat/GroupClient.java</file>
+            <file>file:/home/varun/NetBeansProjects/LanChatAndFileSearching2/src/privateChat/PrivateChat.java</file>
+            <file>file:/home/varun/NetBeansProjects/LanChatAndFileSearching2/src/groupChat/GroupChat.java</file>
+            <file>file:/home/varun/NetBeansProjects/LanChatAndFileSearching2/src/privateChat/P2PClient.java</file>
         </group>
     </open-files>
 </project-private>

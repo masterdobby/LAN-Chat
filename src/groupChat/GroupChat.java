@@ -38,6 +38,7 @@ public class GroupChat extends PrivateChat {
     @Override
     public void createServerChatBox(int portNumber) throws IOException {
         //System.out.println(portNumber);
+        ipAddresses = new GetMyIpAddress().ipAddress();
         JLabel ipAddressLabel = new JLabel();
         ipAddressLabel.setBounds(5, 25, 140, 30);
         ipAddressLabel.setText("Your IpAddress: ");
@@ -75,7 +76,7 @@ public class GroupChat extends PrivateChat {
         setLayout(null);
         setVisible(true);
         new GroupServer().createServer(chatTextArea, portNumber);
-        out = new GroupClient().joinServer(chatTextArea, "localhost", portNumber);
+        out = new GroupClient().joinServer(chatTextArea, ipAddresses[0], portNumber);
     }
     @Override
     public void joinServerChatBox(String ipAddress, int portNumber) throws IOException {
@@ -86,7 +87,8 @@ public class GroupChat extends PrivateChat {
         add(ipAddressLabel);
         JLabel ipAddressValueLabel = new JLabel();
         ipAddressValueLabel.setBounds(160, 25, 120, 30);
-        ipAddressValueLabel.setText(ipAddresses[0] + "  " + ipAddresses[1]);
+        //ipAddressValueLabel.setText(ipAddresses[0] + "  " + ipAddresses[1]);
+        ipAddressValueLabel.setText(ipAddress);
         add(ipAddressValueLabel);
         JLabel portLabel = new JLabel();
         portLabel.setBounds(350, 25, 150, 30);
@@ -116,7 +118,7 @@ public class GroupChat extends PrivateChat {
         setSize(570, 360);
         setLayout(null);
         setVisible(true);
-        out = new GroupClient().joinServer(chatTextArea, ipAddresses[0], portNumber);
+        out = new GroupClient().joinServer(chatTextArea, ipAddress, portNumber);
     }
 }
 

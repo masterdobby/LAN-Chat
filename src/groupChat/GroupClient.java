@@ -33,6 +33,7 @@ public class GroupClient {
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
         final BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         new Thread() {
+            @Override
             public void run() {
                 String message = null;
                 while (true) {

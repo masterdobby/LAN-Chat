@@ -78,7 +78,7 @@ class HandleClientThread implements Runnable {
                 //GroupServer.chatTextArea.append("Client" + currentThreadName.charAt(7) + ": " + inputLine);
                 //outPutLine = inputLine + " from server";
                 //out.println(outPutLine);
-                new Broadcast(inputLine).send();
+                new Broadcast(clientSocket.getRemoteSocketAddress() + ": " + inputLine).send();
                 if (inputLine.equalsIgnoreCase("bye")) {
                     break;
                 }
@@ -104,7 +104,8 @@ class Broadcast {
             clientSocket = (Socket) GroupServer.connectedClients.get(i);
             try {
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
-                messageToBeSent = clientSocket.getRemoteSocketAddress() + ": " + message;
+                //messageToBeSent = clientSocket.getRemoteSocketAddress() + ": " + message;
+                messageToBeSent = message;
                 out.println(messageToBeSent);
             } catch (Exception e) {
                 e.printStackTrace();

@@ -72,7 +72,8 @@ public class PrivateChat extends javax.swing.JFrame implements ActionListener{
         add(ipAddressLabel);
         JLabel ipAddressValueLabel = new JLabel();
         ipAddressValueLabel.setBounds(160, 25, 120, 30);
-        ipAddressValueLabel.setText(ipAddresses[0] + "  " + ipAddresses[1]);
+        //ipAddressValueLabel.setText(ipAddresses[0] + "  " + ipAddresses[1]);//here is the problem
+        ipAddressValueLabel.setText(ipAddress);
         add(ipAddressValueLabel);
         JLabel portLabel = new JLabel();
         portLabel.setBounds(350, 25, 150, 30);
@@ -102,7 +103,7 @@ public class PrivateChat extends javax.swing.JFrame implements ActionListener{
         setSize(570, 360);
         setLayout(null);
         setVisible(true);
-        out = new P2PClient().joinServer(chatTextArea, ipAddresses[0], portNumber);
+        out = new P2PClient().joinServer(chatTextArea, ipAddress, portNumber);
     }
     public void createServerChatBox(int portNumber) throws IOException {
         //System.out.println(portNumber);
